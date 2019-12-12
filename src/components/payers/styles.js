@@ -1,16 +1,10 @@
 import styled from "styled-components";
 
 export const PaidBox = styled.div`
-  /* height: 200px; */
-  /* width: 75px; */
-
   margin-bottom: 8px;
   box-shadow: 0 5px 5px #e7e7e7;
   border-radius: 5px;
   margin-bottom: 8px;
-
-  /* width:33%; */
-
   background-color: #fff;
 `;
 
