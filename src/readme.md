@@ -1,0 +1,13 @@
+locatario
+C -> [1] CRED BOLETO P/PG CMP
+D -> [2] PGTO CMPRA C/ BOLETO
+
+proprietario
+C -> [3] VENDA COM BOLETO
+D -> [4] SRV MEDIADOR BOLETO
+
+Live Here
+C -> [5] CRE SERV MEDIAD BOL
+
+Taxas
+D -> [6] TARIFA VD BOLETO LOJ
