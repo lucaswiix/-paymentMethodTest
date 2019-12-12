@@ -4,8 +4,6 @@ import users from "../../account_list";
 import { SelectorUser } from "./styles";
 
 const Selectors = () => {
-  async function forUsers() {}
-
   async function handleChange() {
     console.log("t");
   }

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { FaSpinner } from 'react-icons/fa';
+import { FaSpinner } from "react-icons/fa";
 
-import './styles.css';
+import "./styles.css";
 
 const Spinner = () => {
-    return <FaSpinner size="3em" color="#0495f6" className="icon-spin" />
-}
+  return <FaSpinner size="3em" color="#0495f6" className="icon-spin" />;
+};
 
 export default Spinner;
