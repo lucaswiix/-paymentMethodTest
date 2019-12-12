@@ -130,8 +130,7 @@ const Home = () => {
       transactions.forEach(tran => {
         if(tran.transaction_id === uuid 
           && tran.operation_id === 2 
-          && tran.account_uuid === e.target.value
-          
+          && tran.account_uuid === e.target.value          
           ){
             
             allTransaction.resident = tran;
@@ -145,7 +144,7 @@ const Home = () => {
               allTransaction.livehere = tran;
             }
           });
-        }
+        }       
 
         // console.log('allTransaction',allTransaction);
         if(!Object.keys(allTransaction).length < 1){
