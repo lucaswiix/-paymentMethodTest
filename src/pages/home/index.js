@@ -115,7 +115,7 @@ const Home = () => {
 
   const handleResident = (e) => {
     const boletos = [];
-
+    setPayments([]);
     let transactionsOfSelectedUser = [];
     
     transactions.forEach(tran => {
@@ -125,29 +125,34 @@ const Home = () => {
     });
 
     transactionsOfSelectedUser.forEach(uuid => {
+      let juststs = [];
       let allTransaction = {};
       transactions.forEach(tran => {
         if(tran.transaction_id === uuid 
           && tran.operation_id === 2 
+          && tran.account_uuid === e.target.value
           
           ){
-            console.log('find', tran);
+            
             allTransaction.resident = tran;
           }
         });
-        transactions.forEach(tran => {
-          if(tran.transaction_id === uuid 
-            && tran.operation_id === 4){
+        
+        if(allTransaction.resident){
+          transactions.forEach(tran => {
+            if(tran && tran.transaction_id === allTransaction.resident.transaction_id
+               && tran.operation_id == 4){
               allTransaction.livehere = tran;
             }
-        })
+          });
+        }
 
         // console.log('allTransaction',allTransaction);
-
-        boletos.push(allTransaction);
+        if(!Object.keys(allTransaction).length < 1){
+          boletos.push(allTransaction);
+        }
     });
 
-    
     console.log('allboletos', boletos);
     setPayments(boletos);
   };
