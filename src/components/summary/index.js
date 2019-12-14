@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "./styles";
+import { Table, Td } from "./styles";
 
 const SummaryData = ({ data }) => {
   return (
@@ -7,16 +7,16 @@ const SummaryData = ({ data }) => {
       <tbody>
         <tr>
           <td>Proprietário:</td>
-          <td>R$ {data.total}</td>
+          <td>R$ {data.total.replace('.', ',')}</td>
         </tr>
 
         <tr>
-          <td>Live here:</td>
-          <td>R$ {data.liveHere}</td>
+          <Td>Live here:</Td>
+          <Td>R$ {data.liveHere.replace('.', ',')}</Td>
         </tr>
         <tr>
-          <td>Taxa de boleto:</td>
-          <td>R$ {data.billTax}</td>
+          <Td>Taxa de boleto:</Td>
+          <Td>R$ {data.billTax.replace('.', ',')}</Td>
         </tr>
 
         <tr>

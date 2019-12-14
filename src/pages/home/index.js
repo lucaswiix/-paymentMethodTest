@@ -32,11 +32,11 @@ const Home = () => {
     setLoading(true);
     const ownersTransaction = transactions.filter(
       transaction =>
-        transaction.operation_id == 3 || transaction.operation_id == 4
+        transaction.operation_id === 3 || transaction.operation_id === 4
     );
 
     const userOwners = users.filter(user =>
-      ownersTransaction.some(owner => owner.account_uuid == user.account_uuid)
+      ownersTransaction.some(owner => owner.account_uuid === user.account_uuid)
     );
     setOwners(userOwners);
     setTimeout(() => {
@@ -67,8 +67,8 @@ const Home = () => {
 
     transactions.forEach(t => {
       if (
-        t.account_uuid == event.target.value &&
-        t.operation_id == 3 &&
+        t.account_uuid === event.target.value &&
+        t.operation_id === 3 &&
         !transacionsId.includes(t.transaction_id)
       ) {
         transacionsId.push(t.transaction_id);
@@ -76,22 +76,22 @@ const Home = () => {
     });
 
     transactions.forEach(t => {
-      if (t.operation_id == 3 && transacionsId.includes(t.transaction_id)) {
+      if (t.operation_id === 3 && transacionsId.includes(t.transaction_id)) {
         dashboard.total += parseFloat(t.amount);
         dashboard.quantity += 1;
       }
     });
 
     transactions.forEach(t => {
-      if (t.operation_id == 4 && transacionsId.includes(t.transaction_id)) {
-        dashboard.total = dashboard.total - parseFloat(t.amount);
+      if (t.operation_id === 4 && transacionsId.includes(t.transaction_id)) {
+        // dashboard.total = dashboard.total - parseFloat(t.amount);
         dashboard.liveHere += parseFloat(t.amount);
       }
     });
 
     transactions.forEach(t => {
-      if (t.operation_id == 6 && transacionsId.includes(t.transaction_id)) {
-        dashboard.total = dashboard.total - parseFloat(t.amount);
+      if (t.operation_id === 6 && transacionsId.includes(t.transaction_id)) {
+        // dashboard.total = dashboard.total - parseFloat(t.amount);
         dashboard.billTax += parseFloat(t.amount);
       }
     });
@@ -103,7 +103,7 @@ const Home = () => {
 
     transacionsId.forEach(id => {
       const trank = transactions.filter(tran => {
-        if (tran.operation_id == 2 && id == tran.transaction_id) {
+        if (tran.operation_id === 2 && id === tran.transaction_id) {
           return true;
         } else {
           return false;
@@ -112,9 +112,9 @@ const Home = () => {
       if (trank.length > 0) {
         users.forEach(user => {
           const hasUser = $residents.some(
-            re => re.account_uuid == user.account_uuid
+            re => re.account_uuid === user.account_uuid
           );
-          if (user.account_uuid == trank[0].account_uuid && !hasUser) {
+          if (user.account_uuid === trank[0].account_uuid && !hasUser) {
             $residents.push(user);
           }
         });
@@ -135,8 +135,8 @@ const Home = () => {
 
     transactions.forEach(tran => {
       if (
-        tran.operation_id == 3 &&
-        tran.account_uuid == selectedUser &&
+        tran.operation_id === 3 &&
+        tran.account_uuid === selectedUser &&
         !transactionsOfSelectedUser.includes(tran.transaction_id)
       ) {
         transactionsOfSelectedUser.push(tran.transaction_id);
@@ -144,7 +144,6 @@ const Home = () => {
     });
 
     transactionsOfSelectedUser.forEach(uuid => {
-      let juststs = [];
       let allTransaction = {};
       transactions.forEach(tran => {
         if (
@@ -161,7 +160,7 @@ const Home = () => {
           if (
             tran &&
             tran.transaction_id === allTransaction.resident.transaction_id &&
-            tran.operation_id == 4
+            tran.operation_id === 4
           ) {
             allTransaction.livehere = tran;
           }

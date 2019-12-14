@@ -10,3 +10,9 @@ export const Table = styled.table`
     height: 40px;
   }
 `;
+
+export const Td = styled.td`
+  font-weight: bold;
+  color:green;
+  
+`
