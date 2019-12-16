@@ -13,6 +13,5 @@ export const Table = styled.table`
 
 export const Td = styled.td`
   font-weight: bold;
-  color:green;
-  
-`
+  color: green;
+`;

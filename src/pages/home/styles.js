@@ -24,9 +24,8 @@ export const Container = styled.div`
   width: 100%;
 
   @media (max-width: 400px) {
-  grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr !important;
   }
-
 `;
 
 export const Wrapper = styled.div`
@@ -44,8 +43,8 @@ export const ContainerBox = styled.div`
   width: 100%;
   padding: 20px 50px 0px 50px;
 
-  @media (max-width: 600px){
-    padding:0px;
+  @media (max-width: 600px) {
+    padding: 0px;
   }
 `;
 

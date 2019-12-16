@@ -7,16 +7,16 @@ const SummaryData = ({ data }) => {
       <tbody>
         <tr>
           <td>Proprietário:</td>
-          <td>R$ {data.total.replace('.', ',')}</td>
+          <td>R$ {data.total.replace(".", ",")}</td>
         </tr>
 
         <tr>
           <Td>Live here:</Td>
-          <Td>R$ {data.liveHere.replace('.', ',')}</Td>
+          <Td>R$ {data.liveHere.replace(".", ",")}</Td>
         </tr>
         <tr>
           <Td>Taxa de boleto:</Td>
-          <Td>R$ {data.billTax.replace('.', ',')}</Td>
+          <Td>R$ {data.billTax.replace(".", ",")}</Td>
         </tr>
 
         <tr>

@@ -20,15 +20,23 @@ const PaymentList = ({ obj }) => {
           .toUpperCase()}
       </PaidDate>
       <PaidBody>
-        <FullPrice>R$ {parseFloat(obj.resident.amount).toFixed(2).replace('.', ',')}</FullPrice>
+        <FullPrice>
+          R${" "}
+          {parseFloat(obj.resident.amount)
+            .toFixed(2)
+            .replace(".", ",")}
+        </FullPrice>
         <WithoutLivehere>
           R${" "}
-          {(
-            parseFloat(obj.resident.amount) - parseFloat(obj.livehere.amount)
-          ).toFixed(2).replace('.', ',')}
+          {(parseFloat(obj.resident.amount) - parseFloat(obj.livehere.amount))
+            .toFixed(2)
+            .replace(".", ",")}
         </WithoutLivehere>
         <LivehereTax>
-          R$ {parseFloat(obj.livehere.amount).toFixed(2).replace('.', ',')}
+          R${" "}
+          {parseFloat(obj.livehere.amount)
+            .toFixed(2)
+            .replace(".", ",")}
         </LivehereTax>
       </PaidBody>
     </PaidBox>

@@ -11,18 +11,15 @@ export const Table = styled.table`
   tr {
     height: 40px;
   }
-
-
 `;
 
 export const Td = styled.td`
   font-weight: bold;
 
   font-size: 18px;
-  
-  color:green;
-  
-`
+
+  color: green;
+`;
 
 const SummaryHostage = ({ data }) => {
   return (
@@ -30,11 +27,11 @@ const SummaryHostage = ({ data }) => {
       <tbody>
         <tr>
           <td>Proprietário:</td>
-          <td>R$ {data.fullCost.toFixed(2).replace('.', ',')}</td>
+          <td>R$ {data.fullCost.toFixed(2).replace(".", ",")}</td>
         </tr>
         <tr>
           <Td>Live Here:</Td>
-          <Td>R$ {data.liveHere.toFixed(2).replace('.', ',')}</Td>
+          <Td>R$ {data.liveHere.toFixed(2).replace(".", ",")}</Td>
         </tr>
       </tbody>
     </Table>
