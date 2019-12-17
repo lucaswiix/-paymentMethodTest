@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Navbar>
       <Logo
-        src="https://static.livehere.com.br/static/media/logo2.11c9ed55.svg"
+        src="/logo_livehere.svg"
         alt="Livehere"
       />
     </Navbar>
