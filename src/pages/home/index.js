@@ -15,7 +15,7 @@ import Header from "../../components/header";
 import Spinner from "../../components/spinner";
 import SummaryHostage from "../../components/summaryHostage";
 
-import services from '../../services';
+import services from "../../services";
 
 const Home = () => {
   const [payments, setPayments] = useState([]);
@@ -27,13 +27,11 @@ const Home = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [summaryHostage, setSummaryHostage] = useState(null);
 
-
-  const getOwners = async () => 
-    setOwners(await services.owners.getAll());  
+  const getOwners = async () => setOwners(await services.owners.getAll());
 
   useEffect(() => {
     setLoading(true);
-     getOwners();
+    getOwners();
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -43,7 +41,7 @@ const Home = () => {
     setPayments([]);
     // setResidets([]);
     setSummaryHostage(null);
-  }
+  };
 
   const handleOwner = async event => {
     const userId = event.target.value;
@@ -54,7 +52,7 @@ const Home = () => {
 
     setResidets(await services.owners.getResidentsByUserId(userId));
     setBills(await services.owners.getBalanceByUserId(userId));
-    
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -64,9 +62,19 @@ const Home = () => {
     const ownerHostage = selectedUser;
     const residentHostage = e.target.value;
     reset();
-    setPayments(await services.residents.getSlipsByOwnerIdAndResidentId(ownerHostage, residentHostage));
+    setPayments(
+      await services.residents.getSlipsByOwnerIdAndResidentId(
+        ownerHostage,
+        residentHostage
+      )
+    );
 
-    setSummaryHostage(await services.residents.getBalanceByOwnerIdAndResidentId(ownerHostage, residentHostage));
+    setSummaryHostage(
+      await services.residents.getBalanceByOwnerIdAndResidentId(
+        ownerHostage,
+        residentHostage
+      )
+    );
   };
 
   return (

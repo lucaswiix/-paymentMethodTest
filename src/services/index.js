@@ -1,7 +1,7 @@
-import * as owners from './OwnersService';
-import * as residents from './ResidentsService';
+import * as owners from "./OwnersService";
+import * as residents from "./ResidentsService";
 
-export default { 
-    owners,
-    residents
-}
+export default {
+  owners,
+  residents
+};
