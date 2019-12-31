@@ -18,6 +18,7 @@ import SummaryHostage from "../../components/summaryHostage";
 import services from "../../services";
 
 const Home = () => {
+  
   const [payments, setPayments] = useState([]);
   const [owners, setOwners] = useState([]);
   const [residents, setResidets] = useState([]);
@@ -39,7 +40,7 @@ const Home = () => {
 
   const reset = async () => {
     setPayments([]);
-    // setResidets([]);
+      
     setSummaryHostage(null);
   };
 
@@ -123,7 +124,6 @@ const Home = () => {
                 </SelectorUser>
                 <SubContainerBox>
                   {summaryHostage && <SummaryHostage data={summaryHostage} />}
-
                   <Container>
                     {payments.length > 0 &&
                       payments.map((r, i) => <PaymentList key={i} obj={r} />)}

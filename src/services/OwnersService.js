@@ -2,6 +2,7 @@ import Transactions from "../transactions";
 import Users from "../account_list";
 
 export const getAll = () => {
+  
   return new Promise(resolve => {
     const ownersTransaction = Transactions.filter(
       transaction =>
